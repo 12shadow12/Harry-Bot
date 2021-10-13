@@ -1,6 +1,9 @@
 import discord
 import os
 import random
+import sys
+
+print('Python Version:',sys.version[0:6])
 
 client = discord.Client()
 
@@ -16,11 +19,14 @@ async def on_ready():
   async def on_message(message):
     if message.author == client:
       return
+
     username = str(message.author.name)  
     user_message = str(message.content)
     channel = str(message.channel.name)
     print(f'{username}: {user_message} ({channel})')
 
+    if client.user.mentioned_in(message):
+      await message.channel.send('LoCaL IdIoTs SpAm PiNg ' + f'{message.author.mention}')
 
     msg = message.content
 
@@ -33,11 +39,15 @@ async def on_ready():
     if msg.startswith('sleep'):
       await message.channel.send('sleep is for the gay')
 
-    if msg.startswith('https://youtu.be/'):
-      await message.channel.send('your videos are gay mate, smoke some testosterone')
-
     if msg.startswith('https://www.youtube.com/'):
       await message.channel.send('your videos are gay mate, smoke some testosterone')
+
+    if msg.startswith('fag'):
+      await message.channel.send('sorry, ' + f'{username} ' + 'this is a christian server and we dont use words like that', file=discord.File('pooh.jpg'))
+
+    # React to Embeds
+    
+
 
 
 client.run(os.getenv('TOKEN'))
