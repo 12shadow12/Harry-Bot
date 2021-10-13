@@ -39,9 +39,6 @@ async def on_ready():
     if msg.startswith('sleep'):
       await message.channel.send('sleep is for the gay')
 
-    if msg.startswith('https://www.youtube.com/'):
-      await message.channel.send('your videos are trash mate, smoke some testosterone')
-
     if msg.startswith('fag'):
       await message.channel.send('sorry, ' + f'{username} ' + 'this is a christian server and we dont use words like that', file=discord.File('pooh.jpg'))
 
