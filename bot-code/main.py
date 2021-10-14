@@ -57,13 +57,13 @@ async def on_message(message):
   if msg.startswith('hello'):
     await message.channel.send('you do not have enough testosterone doode')
 
-  if any(word in msg for word in sad_words):
+  elif any(word in msg for word in sad_words):
     await message.channel.send(random.choice(crying_gifs))
 
-  if msg.startswith('sleep'):
+  elif msg.startswith('sleep'):
     await message.channel.send('sleep is for the gay')
 
-  if msg.startswith('fag'):
+  elif msg.startswith('fag'.lower()):
     await message.channel.send('sorry, ' + f'{username} ' + 'this is a christian server and we dont use words like that', file=discord.File('pooh.jpg'))
 
     # React to Embeds
