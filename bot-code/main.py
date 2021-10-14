@@ -12,6 +12,8 @@ sad_words = ["fk u", "no u", "shyt", "nigger", "ghey", "nigga", "gay", "fking", 
 
 crying_gifs = ["https://media.discordapp.net/attachments/809956725943566336/890364824352088074/855999071511511072.gif", "what did you just say doode?","https://c.tenor.com/aySvKBn5tAgAAAAM/anime.gif", "Get some brotein bro", "https://cdn.discordapp.com/emojis/868985496875991081.gif?size=32"]
 
+emojis = [896284438592385035, 892166330533433385, 840506809717882890, 891095263211581450, 882476300810481677, 839389367231184907]
+
 @client.command(pass_context = True)
 async def join(ctx):
   if (ctx.author.voice):
@@ -40,9 +42,9 @@ async def on_ready():
 async def on_message(message):
   if message.author == client:
     return
-  if len(message.embeds) != -1:
-    emoji = client.get_emoji(896284438592385035)
-    await message.add_reaction(emoji)
+  if len(message.embeds) != 0:
+    await message.add_reaction(client.get_emoji(random.choice(emojis)))
+
 
   await client.process_commands(message)
 
