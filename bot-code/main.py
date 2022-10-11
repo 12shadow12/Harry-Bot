@@ -8,7 +8,7 @@ print('Python Version:',sys.version[0:6])
 
 client = commands.Bot(command_prefix = '!')
 
-sad_words = ["fk u", "no u", "shyt", "nigger", "ghey", "nigga", "gay", "fking", "fuck", "Fuck", "suck my", "ass", "dick"]
+sad_words = ["sad", "no u", "mad", "angry", "nibba", "block", "dreary", "heartbreaking", "melancholy", "mournful", "disappointed", "regret"]
 
 crying_gifs = ["https://media.discordapp.net/attachments/809956725943566336/890364824352088074/855999071511511072.gif", "what did you just say doode?","https://c.tenor.com/aySvKBn5tAgAAAAM/anime.gif", "Get some brotein bro", "https://cdn.discordapp.com/emojis/868985496875991081.gif?size=32"]
 
@@ -54,7 +54,7 @@ async def on_message(message):
   print(f'{username}: {user_message} ({channel})')
 
   if client.user.mentioned_in(message):
-    await message.channel.send('LoCaL IdIoTs SpAm PiNg ' + f'{message.author.mention}')
+    await message.channel.send('ping me again ' + f'{message.author.mention}')
 
   msg = message.content
 
@@ -67,8 +67,8 @@ async def on_message(message):
   elif msg.startswith('sleep'):
     await message.channel.send('sleep is for the gay')
 
-  elif msg.startswith('fag'):
-    await message.channel.send('sorry, ' + f'{username} ' + 'this is a christian server and we dont use words like that', file=discord.File('pooh.jpg'))
+  elif msg.startswith('mean'):
+    await message.channel.send('sorry, ' + f'{username} ' + 'this is a good server and we dont use words like that', file=discord.File('pooh.jpg'))
 
     # React to Embeds
 
